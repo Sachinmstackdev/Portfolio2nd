@@ -140,12 +140,19 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-md"
+              className="md:hidden fixed inset-0 z-[60] bg-white min-h-screen overflow-y-auto"
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
             >
-              <div className="container pt-24 pb-8 safe-area-bottom">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="absolute top-5 right-4 p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              <div className="container pt-24 pb-8 safe-area-bottom relative z-10">
                 <div className="grid gap-2">
                   {navItems.map((item) => (
                     <Link

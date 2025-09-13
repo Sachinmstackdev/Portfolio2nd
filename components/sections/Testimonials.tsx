@@ -179,13 +179,13 @@ export function Testimonials() {
             onMouseLeave={startAuto}
             onTouchStart={stopAuto}
             onTouchEnd={startAuto}
-            className="flex overflow-x-auto gap-4 pb-4 scroll-smooth snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            className="flex overflow-x-auto gap-4 pb-4 scroll-smooth snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1"
           >
             {testimonialsWithRatings.map((testimonial) => (
               <div
                 key={testimonial.id}
                 data-card
-                className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 min-w-[280px] flex-shrink-0 snap-start transition-transform duration-300"
+                className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 min-w-[88%] max-w-[88%] sm:min-w-[320px] flex-shrink-0 snap-start transition-transform duration-300 overflow-hidden"
               >
                 <div className="flex items-start space-x-3 mb-4">
                   {testimonial.logo ? (
@@ -215,17 +215,17 @@ export function Testimonials() {
                       </span>
                     </div>
                   )}
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 text-lg">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-gray-900 text-lg break-words leading-tight">
                       {testimonial.client}
                     </h3>
-                    <p className="text-sm text-blue-600 font-medium">
+                    <p className="text-xs sm:text-sm text-blue-600 font-medium break-words">
                       {testimonial.services}
                     </p>
                   </div>
                 </div>
                 
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-gray-700 leading-relaxed text-sm break-words whitespace-normal">
                   {testimonial.description}
                 </p>
                 
@@ -247,7 +247,7 @@ export function Testimonials() {
           {testimonialsWithRatings.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 overflow-hidden"
             >
               <div className="flex items-start space-x-3 mb-4">
                 {testimonial.logo ? (
@@ -277,17 +277,17 @@ export function Testimonials() {
                     </span>
                   </div>
                 )}
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 text-lg">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-gray-900 text-lg break-words leading-tight">
                     {testimonial.client}
                   </h3>
-                  <p className="text-sm text-blue-600 font-medium">
+                  <p className="text-sm text-blue-600 font-medium break-words">
                     {testimonial.services}
                   </p>
                 </div>
               </div>
               
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed break-words">
                 {testimonial.description}
               </p>
               
