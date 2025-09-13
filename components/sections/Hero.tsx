@@ -177,7 +177,7 @@ export function Hero() {
                       type: "spring",
                       stiffness: 200
                     }}
-                    className={`absolute ${item.position} hidden md:block`}
+                    className={`absolute ${item.position} block z-10`}
                   >
                     <motion.div
                       animate={{ 
