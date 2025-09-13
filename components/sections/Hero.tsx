@@ -66,23 +66,26 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-3 md:gap-4"
             >
-              <motion.button
+              <motion.a
+                href="/Sachin%20Kumar%20Resume.pdf"
+                download="Sachin-Kumar-Resume.pdf"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 md:px-8 py-4 md:py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 text-base md:text-lg touch-manipulation mobile-button"
+                className="group bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 md:px-7 py-3 md:py-3.5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base md:text-lg touch-manipulation"
               >
-                <span>🚀 Let's Work Together</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              
-              <motion.button
+                <span>Resume</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              </motion.a>
+
+              <motion.a
+                href="#projects"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group border-2 border-gray-300 text-gray-700 font-semibold px-6 md:px-8 py-4 md:py-4 rounded-xl hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300 flex items-center justify-center space-x-2 text-base md:text-lg touch-manipulation mobile-button"
+                className="group border-2 border-gray-300 text-gray-700 font-semibold px-6 md:px-7 py-3 md:py-3.5 rounded-xl hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300 flex items-center justify-center gap-2 text-base md:text-lg touch-manipulation"
               >
-                <span>📁 View My Projects</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+                <span>Projects</span>
+                <FolderOpen className="h-4 w-4 text-indigo-600 group-hover:text-indigo-600" />
+              </motion.a>
             </motion.div>
 
             {/* Stats */}

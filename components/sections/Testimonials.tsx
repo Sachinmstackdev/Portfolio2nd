@@ -157,11 +157,14 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50">
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium mb-4">
+            <span>Testimonials</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Clients Say
+            What Clients <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Say</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Success stories from businesses we've helped grow and transform

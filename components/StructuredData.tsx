@@ -8,10 +8,10 @@ export function StructuredData() {
     "url": "https://sachinkumar.dev",
     "image": "https://sachinkumar.dev/sachin-kumar.jpg",
     "sameAs": [
-      "https://twitter.com/sachinkumar",
-      "https://linkedin.com/in/sachinkumar",
-      "https://github.com/sachinkumar",
-      "https://intelligencedock.com"
+      "https://www.linkedin.com/in/sachin-kumar-5647b5219/",
+      "https://github.com/Sachinmstackdev",
+      "https://intelligencedock.com",
+      "https://wa.me/919289613912"
     ],
     "knowsAbout": [
       "Full-Stack Development",

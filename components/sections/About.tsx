@@ -11,7 +11,6 @@ import {
   ExternalLink,
   Github,
   Linkedin,
-  Twitter,
   Mail,
   Phone,
   Star,
@@ -38,9 +37,9 @@ export function About() {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/sachinkumar', color: 'hover:bg-gray-900 hover:text-white' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/sachinkumar', color: 'hover:bg-blue-600 hover:text-white' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/sachinkumar', color: 'hover:bg-sky-500 hover:text-white' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/Sachinmstackdev', color: 'hover:bg-gray-900 hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/sachin-kumar-5647b5219/', color: 'hover:bg-blue-600 hover:text-white' },
+    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/919289613912', color: 'hover:bg-green-500 hover:text-white' },
   ];
 
   const stats = [
@@ -106,7 +105,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section id="about" className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -223,6 +222,14 @@ export function About() {
                       </a>
                     </div>
                     <div className="flex items-center space-x-3 group">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                        <Mail className="h-3 w-3 md:h-4 md:w-4 text-blue-600 group-hover:text-white" />
+                      </div>
+                      <a href="mailto:sachin@intelligencedock.com" className="text-sm md:text-base text-gray-700 hover:text-blue-600 transition-colors font-medium break-all">
+                        sachin@intelligencedock.com
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3 group">
                       <div className="w-8 h-8 md:w-10 md:h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-colors">
                         <Phone className="h-3 w-3 md:h-4 md:w-4 text-green-600 group-hover:text-white" />
                       </div>
@@ -249,6 +256,8 @@ export function About() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={social.name}
+                      title={social.name}
                       className={`w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-lg md:rounded-xl flex items-center justify-center transition-all duration-300 ${social.color}`}
                     >
                       <social.icon className="h-4 w-4 md:h-5 md:w-5 text-gray-600" />

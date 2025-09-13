@@ -167,7 +167,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section id="services" className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Menu, X, Github, Linkedin, MessageCircle } from 'lucide-react';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,10 +53,9 @@ export function Navbar() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com/sachinkumar' },
-    { icon: Twitter, href: 'https://twitter.com/sachinkumar' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/sachinkumar' },
-    { icon: Instagram, href: 'https://instagram.com/sachinkumar' },
+    { icon: Github, href: 'https://github.com/Sachinmstackdev' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/sachin-kumar-5647b5219/' },
+    { icon: MessageCircle, href: 'https://wa.me/919289613912' },
   ];
 
   return (

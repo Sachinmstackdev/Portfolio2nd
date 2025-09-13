@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,16 +22,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://twitter.com/sachinkumar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800 touch-manipulation"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/sachinkumar"
+                href="https://www.linkedin.com/in/sachin-kumar-5647b5219/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800 touch-manipulation"
@@ -40,13 +31,22 @@ export function Footer() {
                 <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
               </Link>
               <Link
-                href="https://github.com/sachinkumar"
+                href="https://github.com/Sachinmstackdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800 touch-manipulation"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5 sm:h-6 sm:w-6" />
+              </Link>
+              <Link
+                href="https://wa.me/919289613912"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800 touch-manipulation"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
               </Link>
             </div>
           </div>
@@ -94,6 +94,15 @@ export function Footer() {
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base break-all touch-manipulation"
                 >
                   sachinkumarmail7@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 flex-shrink-0" />
+                <a
+                  href="mailto:sachin@intelligencedock.com"
+                  className="text-gray-300 hover:text-white transition-colors text-sm md:text-base break-all touch-manipulation"
+                >
+                  sachin@intelligencedock.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
