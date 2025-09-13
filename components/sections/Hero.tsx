@@ -18,7 +18,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="min-h-screen bg-white flex items-start pt-2 relative overflow-hidden font-outfit safe-area-top">
+    <section className="min-h-screen bg-white flex items-start pt-28 md:pt-0 relative overflow-hidden font-outfit safe-area-top">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-48 h-48 md:w-96 md:h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
@@ -120,7 +120,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex justify-center order-1 lg:order-2"
+            className="relative flex justify-center order-1 lg:order-2 pt-16 sm:pt-20 md:pt-0"
           >
             <div className="relative">
               {/* Circular Graphic */}

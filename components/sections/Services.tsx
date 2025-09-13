@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { 
   Check,
   ArrowRight,
-  Clock,
   Star,
   Package,
   Rocket,
@@ -35,72 +34,60 @@ import {
 export function Services() {
   const mainServices = [
     {
-      title: '🔧 Custom SaaS Development',
-      description: 'End-to-end custom software development for your business needs.',
-      icon: Settings,
-      price: 'Custom Quote',
-      duration: '8-12 weeks',
+      title: 'Custom E-Commerce Development',
+      description: 'End-to-end website development tailored for small and mid-size businesses.',
+      icon: ShoppingCart,
+      price: '💡 Projects typically start at ₹25,000+',
       features: [
-        'Full-stack Development with Next.js/React',
-        'Scalable Backend Architecture',
-        'Database Design & Implementation',
-        'API Development & Integration',
-        'User Authentication & Authorization',
-        'Performance Optimization',
-        'Deployment & DevOps Setup'
+        'WooCommerce & Shopify Setup',
+        'Custom MERN Stack Applications',
+        'Speed Optimization & Maintenance',
+        'Hosting & Domain Integration'
       ],
       cta: 'Start Project',
       popular: true,
       color: 'from-blue-500 to-cyan-500',
-      subtitle: 'Transform your business idea into a powerful SaaS solution.'
+      subtitle: 'Built to convert, scale, and perform.'
     },
     {
-      title: '🚀 Digital Marketing Suite',
-      description: 'Comprehensive marketing solutions for mid-size businesses.',
+      title: 'Digital Marketing Suite',
+      description: 'Comprehensive solutions to boost sales and scale revenue.',
       icon: TrendingUp,
-      price: 'Custom Quote',
-      duration: 'Ongoing',
+      price: '💡 Retainers typically start at ₹15,000/month',
       features: [
-        'Marketing Strategy Development',
         'SEO & Content Marketing',
         'Social Media Management',
         'Email Marketing Automation',
-        'PPC & Performance Marketing',
-        'Analytics & Reporting Dashboard',
-        'Conversion Rate Optimization'
+        'PPC & Performance Marketing'
       ],
       cta: 'Boost Growth',
       popular: false,
       color: 'from-green-500 to-emerald-500',
-      subtitle: 'Drive growth with data-driven marketing strategies.'
+      subtitle: 'Always-on growth with measurable ROI.'
     },
     {
-      title: '💼 Enterprise Solutions',
-      description: 'Custom enterprise-grade solutions for complex business needs.',
+      title: 'Enterprise Solutions',
+      description: 'Advanced solutions for scaling and automation needs.',
       icon: Briefcase,
-      price: 'Custom Quote',
-      duration: '12+ weeks',
+      price: '💡 Tailored for mid-sized businesses & enterprises',
       features: [
-        'Enterprise System Architecture',
-        'Legacy System Integration',
         'Custom CRM Development',
+        'Marketing & Sales Funnel Setup',
         'Business Process Automation',
-        'Data Analytics & Reporting',
-        'Security Implementation',
-        'Training & Documentation'
+        'Analytics & Reporting Systems'
       ],
       cta: 'Transform Business',
       popular: false,
       color: 'from-purple-500 to-pink-500',
-      subtitle: 'Enterprise-grade solutions for complex business challenges.'
+      subtitle: 'Engineered for reliability, security, and scale.'
     }
   ];
 
   const addOnServices = [
-    { name: 'UI/UX Design & Prototyping', price: 'Custom Quote', icon: Palette },
-    { name: 'Cloud Infrastructure Setup', price: 'Custom Quote', icon: Globe },
-    { name: 'AI/ML Integration Services', price: 'Custom Quote', icon: Brain },
-    { name: 'Technical Consultation', price: 'Custom Quote', icon: MessageCircle }
+    { name: 'Landing Page Design (High-Converting Sales Pages)', price: 'Starts ₹12,000', icon: Palette },
+    { name: 'Custom Chatbots', price: 'Starts ₹8,000', icon: MessageCircle },
+    { name: 'Analytics & Tracking Setup (GA, Pixel, Looker Studio Dashboards)', price: 'Starts ₹10,000', icon: BarChart3 },
+    { name: 'Creative Design & Ad Videos (For Paid Campaigns)', price: 'Starts ₹7,500/project', icon: Award }
   ];
 
   const caseStudies = [
@@ -235,15 +222,10 @@ export function Services() {
                   </p>
                   
                   {/* Price */}
-                  <div className="flex items-center justify-center space-x-4 mb-6">
-                    <div className="text-2xl md:text-3xl font-bold text-gray-900">
+                  <div className="flex items-center justify-center gap-2 mb-6 text-indigo-600">
+                    <Zap className="h-4 w-4" />
+                    <div className="text-sm md:text-base font-medium text-gray-700">
                       {service.price}
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      <div className="flex items-center space-x-1">
-                        <Clock className="h-4 w-4" />
-                        <span>{service.duration}</span>
-                      </div>
                     </div>
                   </div>
                 </div>

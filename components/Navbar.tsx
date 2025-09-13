@@ -8,6 +8,7 @@ import { Menu, X, Github, Linkedin, MessageCircle } from 'lucide-react';
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,11 @@ export function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Mark mounted to avoid hydration mismatch for dynamic classes
+  useEffect(() => {
+    setHasMounted(true);
   }, []);
 
   // Close menu when clicking outside
@@ -60,18 +66,20 @@ export function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-container ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200'
-          : 'bg-white/80 backdrop-blur-sm'
+        hasMounted && isScrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200'
+          : 'bg-white/70 backdrop-blur'
       }`}
+      role="navigation"
+      aria-label="Primary"
     >
       <div className="container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group touch-manipulation">
+          <Link href="/" className="flex items-center space-x-2 group touch-manipulation" aria-label="Go to homepage">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <span className="text-white font-bold text-sm sm:text-base">SK</span>
             </div>
@@ -107,6 +115,12 @@ export function Navbar() {
                 <social.icon className="h-5 w-5" />
               </Link>
             ))}
+            <Link
+              href="#contact"
+              className="ml-2 inline-flex items-center rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 text-sm font-semibold shadow-sm hover:shadow transition-all touch-manipulation"
+            >
+              Let’s Talk
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -123,39 +137,43 @@ export function Navbar() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-200 bg-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-md"
               id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
             >
-              <div className="py-4 space-y-1 safe-area-bottom">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="mobile-nav-item text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-lg transition-colors touch-manipulation"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="px-4 pt-4 border-t border-gray-200 mt-4">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3">Follow Me</h3>
-                  <div className="flex space-x-4">
-                    {socialLinks.map((social) => (
-                      <Link
-                        key={social.href}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-gray-700 hover:text-purple-600 transition-colors p-3 rounded-lg hover:bg-gray-50 touch-manipulation"
-                        aria-label={`Visit ${social.icon.name} profile`}
-                      >
-                        <social.icon className="h-6 w-6" />
-                      </Link>
-                    ))}
+              <div className="container pt-24 pb-8 safe-area-bottom">
+                <div className="grid gap-2">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="mobile-nav-item text-gray-800 hover:text-purple-600 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="px-4 pt-4 border-t border-gray-200 mt-4">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Follow Me</h3>
+                    <div className="flex space-x-4">
+                      {socialLinks.map((social) => (
+                        <Link
+                          key={social.href}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setIsMenuOpen(false)}
+                          className="text-gray-700 hover:text-purple-600 transition-colors p-3 rounded-lg hover:bg-gray-50 touch-manipulation"
+                          aria-label={`Visit ${social.icon.name} profile`}
+                        >
+                          <social.icon className="h-6 w-6" />
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
