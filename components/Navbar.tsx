@@ -144,15 +144,16 @@ export function Navbar() {
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
+              onClick={() => setIsMenuOpen(false)}
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-5 right-4 p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                className="absolute top-5 right-4 p-3 rounded-lg hover:bg-gray-100 transition-colors z-20"
                 aria-label="Close menu"
               >
                 <X className="h-6 w-6" />
               </button>
-              <div className="container pt-24 pb-8 safe-area-bottom relative z-10">
+              <div className="container pt-24 pb-8 safe-area-bottom relative" onClick={(e) => e.stopPropagation()}>
                 <div className="grid gap-2">
                   {navItems.map((item) => (
                     <Link
