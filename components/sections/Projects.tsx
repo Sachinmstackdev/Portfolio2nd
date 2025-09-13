@@ -119,7 +119,7 @@ export function Projects() {
       description: 'Local SEO and digital marketing',
       link: '#',
       category: 'Healthcare',
-      image: 'https://res.cloudinary.com/twosapiens/image/upload/v1757613677/kamla-health-logo_qqvxhc.png'
+      image: 'https://res.cloudinary.com/twosapiens/image/upload/v1757752935/AC9h4nrr8DcJDjEXlUFvBnRA9I8agtaw_w3wlnr.png'
     },
     {
       title: 'Intelligence Dock',
@@ -127,7 +127,7 @@ export function Projects() {
       description: 'Full-service digital agency specializing in custom development and marketing solutions',
       link: 'https://www.intelligencedock.com/',
       category: 'Agency',
-      image: 'https://res.cloudinary.com/twosapiens/image/upload/v1757613677/intelligence-dock-logo_kxwpqm.png'
+      image: 'https://res.cloudinary.com/twosapiens/image/upload/v1757752746/Screenshot_2025-09-13_140824_bemcti.png'
     },
     {
       title: 'Microscope',
